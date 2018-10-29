@@ -14,7 +14,7 @@ class BrowserTest(unittest.TestCase):
         self.assertEqual(6, 3 + 3)
 
     def test_souhu(self):
-        self.assertEqual(7, 3 + 4)
+        self.assertEqual(9, 3 + 4)
 
     def tearDown(self):
         pass
