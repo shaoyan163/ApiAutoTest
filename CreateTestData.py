@@ -1,30 +1,31 @@
-# coding=utf-8
-import random
-import time
+#coding=utf-8
+import unittest
+from selenium import webdriver
 
 
-def create_user():
-    start = time.time()
-    count = 1000  # 一千万条数据
-    beginId = 200010000
-    with open(r"./userInfo.txt", "w") as fp:
-        for i in range(1, count+1):
-            id = str(i)
-            userId = beginId + i
-            name = ''.join(random.sample('zyxwvutsrqponmlkjihgfedcba', 4)).replace('', '')
-            sex = str(random.choice(['男', '女']))
-            weight = str(random.randrange(10, 99))
-            address = str(random.choice(['北京', '上海', '深圳', '广州', '杭州']))
-            insert_t_user_weight = (
-                            "INSERT INTO t_user_weight VALUES ('%s', '%s', '%s','%s', '%s', '%s', '%s');"
-            % (id, userId, name, sex, weight, address, time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
-                       )
-            insert_t_user_weight = insert_t_user_weight + '\n'
-            # print(insert_t_user_weight)
-            fp.write(insert_t_user_weight)
+class BrowserTest(unittest.TestCase):
+    def setUp(self):
+        self.driver = webdriver.Chrome()
 
-        print('共创建%d条sql耗时：'% count, time.time() - start)
+    def test_baidu(self):
+        self.driver.get("http://www.baidu.com")
+        tx = self.driver.find_element_by_id("su")
+        self.assertEqual(u"百度一下", tx.get_attribute("value"))
+
+    def test_sougou(self):
+        self.driver.get("https://www.sogou.com/")
+        self.assertIn(u"关于搜狗", self.driver.page_source)
+
+    def test_souhu(self):
+        self.driver.get("http://www.sohu.com/")
+        self.assertIn(u"邮箱", self.driver.page_source)
+
+    def tearDown(self):
+        self.driver.quit()
 
 
 if __name__ == "__main__":
-        create_user()
+    unittest.main()
+
+
+
