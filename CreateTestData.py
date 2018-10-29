@@ -7,7 +7,7 @@ def create_user():
     start = time.time()
     count = 1000  # 一千万条数据
     beginId = 200010000
-    with open(r"E:\Desktop\a\userInfo.txt", "w") as fp:
+    with open(r"./userInfo.txt", "w") as fp:
         for i in range(1, count+1):
             id = str(i)
             userId = beginId + i
