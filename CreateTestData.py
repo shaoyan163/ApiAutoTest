@@ -21,7 +21,7 @@ def create_user():
                        )
             insert_t_user_weight = insert_t_user_weight + '\n'
             # print(insert_t_user_weight)
-            fo.write(insert_t_user_weight)
+            fp.write(insert_t_user_weight)
 
         print('共创建%d条sql耗时：'% count, time.time() - start)
 
