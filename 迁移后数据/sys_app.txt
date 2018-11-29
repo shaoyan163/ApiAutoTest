@@ -1,5 +1,0 @@
-"ASSET"	"资产端"		"http://atsdev.fengdai.org/assets"	"system"	"system"	"16/1/2018 17:22:49"	"16/1/2018 17:22:49"
-"CENTER"	"资产中心"		"http://atsdev.fengdai.org/center"	"system"	"system"	"16/1/2018 17:23:13"	"16/1/2018 17:23:13"
-"CHAIN_ASSET"	"链上资产端"		"http://atsdev.fengdai.org/chain-assets"	"system"	"system"	"16/1/2018 17:22:30"	"16/1/2018 17:22:30"
-"CHAIN_FUND"	"链上资金端"		"http://atsdev.fengdai.org/chain-funds"	"system"	"system"	"16/1/2018 17:22:30"	"16/1/2018 17:22:30"
-"FUND"	"资金端"		"http://atsdev.fengdai.org/funds"	"system"	"system"	"16/1/2018 17:22:30"	"16/1/2018 17:22:30"
